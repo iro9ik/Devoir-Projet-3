@@ -1,4 +1,4 @@
-﻿# Base de données vectorielle ChromaDB
+# Base de données vectorielle ChromaDB
 chroma_db/
 .chroma/
 *.sqlite3
