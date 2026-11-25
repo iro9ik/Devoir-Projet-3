@@ -8,8 +8,10 @@ Ce projet implemente un systeme de generation augmentee par recuperation (RAG) m
 
 - **Attention_is_all_you_need.pdf** : Article scientifique fondateur (Vaswani et al., 2017) telecharge depuis arXiv.
 - **pdfs/attention is all you need.pdf** : Copie de compatibilite pour le chemin relatif d'importation.
-- **rag_multimodal_agentique.ipynb** : Notebook pas a pas articulant les 7 etapes de la construction du RAG.
-- **.gitignore** : Configuration ignorant l'index vectoriel ChromaDB et les variables d'environnement.
+- **resultats_pdf/** : Dossier contenant les textes extraits page par page et les figures decoupees du document.
+- **architecture_transformer.png** : Figure de l'architecture Transformer extraite pour les requetes multimodales.
+- **rag_multimodal_agentique.ipynb** : Notebook execute avec succes articulant les 7 etapes de la construction du RAG.
+- **.gitignore** : Configuration ignorant la base de donnees vectorielle locale et les caches.
 
 ---
 
@@ -32,7 +34,7 @@ Ce projet implemente un systeme de generation augmentee par recuperation (RAG) m
 - Encapsulation de la recherche vectorielle dans une fonction outillee destinee a un agent intelligent.
 
 ### 6. Construction de l'Agent ReAct
-- Orchestration d'une boucle Reflexion -> Action -> Observation avec le modele local Ollama (maternion/mimo-v2.6:9b-instruct).
+- Orchestration d'une boucle Reflexion -> Action -> Observation avec le modele local Ollama.
 
 ### 7. Tests et Validation
 - Evaluation de l'agent sur des requetes documentaires complexes et localisation des figures de l'article.
@@ -43,10 +45,10 @@ Ce projet implemente un systeme de generation augmentee par recuperation (RAG) m
 
 1. Installer les dependances :
    ```bash
-   pip install pymupdf open_clip_torch chromadb langchain langchain-ollama torch
+   pip install pymupdf open_clip_torch chromadb langchain langchain-ollama torch openai ipython
    ```
 2. Demarrer le serveur local Ollama :
    ```bash
-   ollama run maternion/mimo-v2.6:9b-instruct
+   ollama serve
    ```
 3. Executer les cellules du notebook rag_multimodal_agentique.ipynb.
